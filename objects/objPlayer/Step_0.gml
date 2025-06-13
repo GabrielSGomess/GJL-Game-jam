@@ -56,3 +56,5 @@ if (moveY < 0 && place_meeting(x, y + moveY, objGround))
 move_and_collide(moveX, moveY, objGround);
 
 if (moveX !=0) image_xscale = sign(moveX);
+
+
