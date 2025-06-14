@@ -1,13 +1,15 @@
 moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
-
+/*
 if (keyboard_check(ord("X")))
 {
 	moveX *= runSpeed;
 }
 else
 {
-	moveX *= moveSpeed;
+	
 }
+*/
+moveX *= moveSpeed;
 
 if (place_meeting(x, y + 2, objGround))
 {
