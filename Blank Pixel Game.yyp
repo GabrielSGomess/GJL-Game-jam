@@ -36,6 +36,7 @@
   "name":"Blank Pixel Game",
   "resources":[
     {"id":{"name":"fontTimer","path":"fonts/fontTimer/fontTimer.yy",},},
+    {"id":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},},
     {"id":{"name":"objFood","path":"objects/objFood/objFood.yy",},},
     {"id":{"name":"objGround","path":"objects/objGround/objGround.yy",},},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},},
