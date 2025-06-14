@@ -85,3 +85,15 @@ if (moveX != 0)
 {
 	image_xscale = sign(moveX);
 }
+
+// colisao com o objfood e ganho de tempo
+if (place_meeting(x, y, objFood)) {
+    var food = instance_place(x, y, objFood);
+    if (food != noone) {
+        with (objTimer) 
+		{
+            timer += food.tempo_extra;
+        }
+        instance_destroy(food);
+    }
+}
