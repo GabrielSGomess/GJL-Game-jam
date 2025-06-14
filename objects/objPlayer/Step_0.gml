@@ -92,6 +92,7 @@ if (moveX != 0)
 
 // colisao com o objfood e ganho de tempo e textp de poup
 if (place_meeting(x, y, objFood)) {
+
     var food = instance_place(x, y, objFood);
     if (food != noone) {	
       objTimer.timer += food.tempo_extra;
