@@ -1,4 +1,4 @@
-moveSpeed = 4;
+moveSpeed = 8;
 runSpeed = 8;
 jumpSpeed = 16;
 

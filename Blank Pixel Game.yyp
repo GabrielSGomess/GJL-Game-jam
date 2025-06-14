@@ -35,11 +35,13 @@
   },
   "name":"Blank Pixel Game",
   "resources":[
+    {"id":{"name":"fontTexpoup","path":"fonts/fontTexpoup/fontTexpoup.yy",},},
     {"id":{"name":"fontTimer","path":"fonts/fontTimer/fontTimer.yy",},},
     {"id":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},},
     {"id":{"name":"objFood","path":"objects/objFood/objFood.yy",},},
     {"id":{"name":"objGround","path":"objects/objGround/objGround.yy",},},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},},
+    {"id":{"name":"objTextpoup","path":"objects/objTextpoup/objTextpoup.yy",},},
     {"id":{"name":"objTimer","path":"objects/objTimer/objTimer.yy",},},
     {"id":{"name":"Level","path":"rooms/Level/Level.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
