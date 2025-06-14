@@ -8,3 +8,6 @@ maxJumpTime = 15;
 moveX = 0;
 moveY = 0;
 
+//Coyote Time!!!
+coyoteTime = 0;
+maxCoyoteTime = 5;

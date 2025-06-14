@@ -1,60 +1,87 @@
-moveX = keyboard_check(vk_right)- keyboard_check(vk_left);
+// Input movement
+moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
 
-//Movimento de corrida
-if keyboard_check(ord("X"))
+// Run speed
+if (keyboard_check(ord("X")))
 {
 	moveX *= runSpeed;
-} else 
+}
+else
 {
 	moveX *= moveSpeed;
 }
 
+// === Coyote Time Setup ===
+// coyoteTime and maxCoyoteTime must be defined in the Create Event:
+// coyoteTime = 0;
+// maxCoyoteTime = 5;
 
-//colisão com o chão
-if(place_meeting(x, y+2, objGround))
+// Ground check
+if (place_meeting(x, y + 2, objGround))
 {
 	moveY = 0;
 	jumping = false;
-	if (keyboard_check_pressed(vk_space))
+	coyoteTime = maxCoyoteTime; // Reset coyote time when on ground
+}
+else
+{
+	if (coyoteTime > 0)
 	{
+		coyoteTime -= 1;
+	}
+}
+
+// Jump initiation (includes coyote time)
+if (keyboard_check_pressed(vk_space) && (coyoteTime > 0 || place_meeting(x, y + 2, objGround)))
+{
 	moveY = -jumpSpeed;
 	jumping = true;
 	jumpTime = 1;
-	}
-} else 
+	coyoteTime = 0; // Disable coyote time after jump
+}
+
+// Variable jump height (hold jump)
+if (!place_meeting(x, y + 2, objGround))
 {
 	if (jumping && keyboard_check(vk_space) && jumpTime <= maxJumpTime)
 	{
 		moveY -= 1;
 		jumpTime += 1;
-	} else 
+	}
+	else
 	{
 		jumping = false;
 	}
 }
 
-
-if (!place_meeting(x, y + 2, objGround)) 
+// Gravity
+if (!place_meeting(x, y + 2, objGround) && coyoteTime <= 0)
 {
-    if (moveY < 0) 
-	{
-        moveY += 2; 
-    } else if (moveY < 10) 
-	{
+    if (moveY < 0)
+    {
+        moveY += 2;
+    }
+    else if (moveY < 10)
+    {
         moveY += 4;
     }
 }
 
-if (moveY < 0 && place_meeting(x, y + moveY, objGround)) 
+// Ceiling collision fix
+if (moveY < 0 && place_meeting(x, y + moveY, objGround))
 {
-    while (place_meeting(x, y, objGround)) 
+	while (place_meeting(x, y, objGround))
 	{
-        y += 1;
-    }
-    moveY = 2;
+		y += 1;
+	}
+	moveY = 2;
 }
+
+// Movement and collision
 move_and_collide(moveX, moveY, objGround);
 
-if (moveX !=0) image_xscale = sign(moveX);
-
-
+// Flip sprite
+if (moveX != 0)
+{
+	image_xscale = sign(moveX);
+}
