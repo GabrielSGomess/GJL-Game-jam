@@ -11,6 +11,7 @@ else
 
 if (place_meeting(x, y + 2, objGround))
 {
+	moveSpeed = 7;
 	moveY = 0;
 	jumping = false;
 	coyoteTime = maxCoyoteTime;
@@ -36,6 +37,7 @@ if (!place_meeting(x, y + 2, objGround))
 	if (jumping && keyboard_check(vk_space) && jumpTime <= maxJumpTime)
 	{
 		moveY -= 1;
+		moveSpeed = 6.5;
 		jumpTime += 1;
 	}
 	else
@@ -52,6 +54,7 @@ if (!place_meeting(x, y + 2, objGround) && coyoteTime <= 0)
 	}
 	else if (moveY < 10)
 	{
+		moveSpeed = 6;
 		moveY += 4;
 	}
 }
@@ -104,3 +107,5 @@ if (place_meeting(x, y, objFood)) {
     }
 	
 }
+
+show_debug_message(moveSpeed, moveSpeed);
