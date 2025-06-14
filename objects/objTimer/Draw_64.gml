@@ -15,5 +15,4 @@ if (secs < 10) secs_txt = "0" + secs_txt;
 var display = mins_txt + ":" + secs_txt;
 
 draw_text(1200, 32, display);
-show_debug_message("Valor real: " + string(timer) + " | Formatado: " + display);
 #endregion

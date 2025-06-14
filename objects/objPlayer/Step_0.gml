@@ -107,5 +107,20 @@ if (place_meeting(x, y, objFood)) {
     }
 	
 }
+// tecla para volta ao check point
+var tecla_voltar = 82; // 82 é o código ASCII para 'R'
+if (keyboard_check_pressed(tecla_voltar))
+{
+	if (variable_global_exists("checkpoint_x") 
+        && variable_global_exists("checkpoint_y"))
+	    && global.checkpoint_x != undefined
+		&& global.checkpoint_y != undefined      
+    {
+        // Teleporta EXATAMENTE para o ícone
+      
+        x = global.checkpoint_x;
+        y = global.checkpoint_y;
+	}
+}
 
 show_debug_message(moveSpeed, moveSpeed);
