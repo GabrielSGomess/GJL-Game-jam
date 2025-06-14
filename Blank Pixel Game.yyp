@@ -41,6 +41,7 @@
     {"id":{"name":"objGround","path":"objects/objGround/objGround.yy",},},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},},
     {"id":{"name":"objTimer","path":"objects/objTimer/objTimer.yy",},},
+    {"id":{"name":"Level","path":"rooms/Level/Level.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"sprfood","path":"sprites/sprfood/sprfood.yy",},},
     {"id":{"name":"sprGround","path":"sprites/sprGround/sprGround.yy",},},
@@ -49,6 +50,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"Level","path":"rooms/Level/Level.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType":"game",
