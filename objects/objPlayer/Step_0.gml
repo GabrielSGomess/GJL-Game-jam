@@ -1,33 +1,20 @@
 moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
-
-/*
-if (keyboard_check(ord("X")))
-{
-	moveX *= runSpeed;
-}
-else
-{
-	
-}
-*/
 moveX *= moveSpeed;
 
 // Lógica do pegador
 if (!caught && keyboard_check_pressed(vk_space) && place_meeting(x, y, objCatcher)) {
     var catcher = instance_place(x, y, objCatcher);
     if (catcher != noone) {
-        x = catcher.x; // Alinhar o x do jogador com o pegador
-        y = catcher.bbox_bottom; // posicionar o jogador no fundo do agarrador
+        x = catcher.x;
+        y = catcher.bbox_bottom;
         caught = true;
     }
 }
 
-// Soltar o pegador se tiver fora dele
 if (caught && !place_meeting(x, y, objCatcher)) {
     caught = false;
 }
 
-// Configurar para sair do pegador e pular junto 
 if (caught && keyboard_check_pressed(vk_up)) {
     caught = false;
     moveY = -jumpSpeed;
@@ -127,10 +114,12 @@ if (moveX != 0)
 }
 
 // Troca de sprites conforme o estado do jogador
+var onGround = place_meeting(x, y + 1, objGround);
+
 if (caught) {
     sprite_index = sprPlayerCatching;
 }
-else if (!place_meeting(x, y + 1, objGround)) {
+else if (!onGround) {
     if (moveY < 0) {
         sprite_index = sprPlayerGoingUp;
     } else {
@@ -138,7 +127,7 @@ else if (!place_meeting(x, y + 1, objGround)) {
     }
 }
 else if (moveX != 0) {
-    sprite_index = sprPlayerWalk; // (caso tenha sprite de andar)
+    sprite_index = sprPlayerWalk;
 }
 else {
     sprite_index = sprPlayerIdle;
@@ -166,10 +155,7 @@ if (keyboard_check_pressed(tecla_voltar))
 	    && global.checkpoint_x != undefined
 		&& global.checkpoint_y != undefined      
     {
-        // Teleporta EXATAMENTE para o ícone
         x = global.checkpoint_x;
         y = global.checkpoint_y;
 	}
 }
-
-show_debug_message(moveSpeed, moveSpeed);
