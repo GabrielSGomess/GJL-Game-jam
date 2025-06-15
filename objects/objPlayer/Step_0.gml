@@ -126,9 +126,26 @@ if (moveX != 0)
 	image_xscale = sign(moveX);
 }
 
+// Troca de sprites conforme o estado do jogador
+if (caught) {
+    sprite_index = sprPlayerCatching;
+}
+else if (!place_meeting(x, y + 1, objGround)) {
+    if (moveY < 0) {
+        sprite_index = sprPlayerGoingUp;
+    } else {
+        sprite_index = sprPlayerGoingDown;
+    }
+}
+else if (moveX != 0) {
+    sprite_index = sprPlayerWalk; // (caso tenha sprite de andar)
+}
+else {
+    sprite_index = sprPlayerIdle;
+}
+
 // colisao com o objfood e ganho de tempo e textp de poup
 if (place_meeting(x, y, objFood)) {
-
     var food = instance_place(x, y, objFood);
     if (food != noone) {	
       objTimer.timer += food.tempo_extra;
@@ -150,7 +167,6 @@ if (keyboard_check_pressed(tecla_voltar))
 		&& global.checkpoint_y != undefined      
     {
         // Teleporta EXATAMENTE para o ícone
-      
         x = global.checkpoint_x;
         y = global.checkpoint_y;
 	}
