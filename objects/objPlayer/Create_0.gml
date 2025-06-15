@@ -11,7 +11,7 @@ moveY = 0;
 
 //Coyote Time!!!
 coyoteTime = 0;
-maxCoyoteTime = 4;
+maxCoyoteTime = 5;
 
 // chekpoint
 global.checkpoint_x = undefined;
