@@ -11,21 +11,22 @@ else
 */
 moveX *= moveSpeed;
 
-// Catcher logic
+// Lógica do pegador
 if (!caught && keyboard_check_pressed(vk_up) && place_meeting(x, y, objCatcher)) {
     var catcher = instance_place(x, y, objCatcher);
     if (catcher != noone) {
-        y = catcher.bbox_bottom; // Move player just under the catcher
+        x = catcher.x; // Alinhar o x do jogador com o pegador
+        y = catcher.bbox_bottom; // posicionar o jogador no fundo do agarrador
         caught = true;
     }
 }
 
-// Release catcher if moving off it
+// Soltar o pegador se tiver fora dele
 if (caught && !place_meeting(x, y, objCatcher)) {
     caught = false;
 }
 
-// If caught and press jump, unfreeze AND jump
+// Configurar para sair do pegador e pular junto 
 if (caught && keyboard_check_pressed(vk_space)) {
     caught = false;
     moveY = -jumpSpeed;
