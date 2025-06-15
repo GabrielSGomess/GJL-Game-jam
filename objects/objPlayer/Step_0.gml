@@ -11,63 +11,92 @@ else
 */
 moveX *= moveSpeed;
 
-if (place_meeting(x, y + 2, objGround))
-{
-	moveSpeed = 7;
-	moveY = 0;
-	jumping = false;
-	coyoteTime = maxCoyoteTime;
-}
-else
-{
-	if (coyoteTime > 0)
-	{
-		coyoteTime -= 1;
-	}
+// Catcher logic
+if (!caught && keyboard_check_pressed(vk_up) && place_meeting(x, y, objCatcher)) {
+    var catcher = instance_place(x, y, objCatcher);
+    if (catcher != noone) {
+        y = catcher.bbox_bottom; // Move player just under the catcher
+        caught = true;
+    }
 }
 
-if (keyboard_check_pressed(vk_space) && (coyoteTime > 0 || place_meeting(x, y + 2, objGround)))
-{
-	moveY = -jumpSpeed;
-	jumping = true;
-	jumpTime = 1;
-	coyoteTime = 0;
+// Release catcher if moving off it
+if (caught && !place_meeting(x, y, objCatcher)) {
+    caught = false;
 }
 
-if (!place_meeting(x, y + 2, objGround))
-{
-	if (jumping && keyboard_check(vk_space) && jumpTime <= maxJumpTime)
-	{
-		moveY -= 1;
-		moveSpeed = 6.5;
-		jumpTime += 1;
-	}
-	else
-	{
-		jumping = false;
-	}
+// If caught and press jump, unfreeze AND jump
+if (caught && keyboard_check_pressed(vk_space)) {
+    caught = false;
+    moveY = -jumpSpeed;
+    jumping = true;
+    jumpTime = 1;
+    coyoteTime = 0;
 }
 
-if (!place_meeting(x, y + 2, objGround) && coyoteTime <= 0)
-{
-	if (moveY < 0)
-	{
-		moveY += 2;
-	}
-	else if (moveY < 10)
-	{
-		moveSpeed = 6;
-		moveY += 4;
-	}
+if (caught) {
+    moveX = 0;
+    moveY = 0;
 }
+else {
+    if (place_meeting(x, y + 2, objGround))
+    {
+        moveSpeed = 7;
+        moveY = 0;
+        jumping = false;
+        coyoteTime = maxCoyoteTime;
+    }
+    else
+    {
+        if (coyoteTime > 0)
+        {
+            coyoteTime -= 1;
+        }
+    }
 
-if (moveY < 0 && place_meeting(x, y + moveY, objGround))
-{
-	while (place_meeting(x, y, objGround))
-	{
-		y += 1;
-	}
-	moveY = 2;
+    if (keyboard_check_pressed(vk_space) && (coyoteTime > 0 || place_meeting(x, y + 2, objGround)))
+    {
+        moveY = -jumpSpeed;
+        jumping = true;
+        jumpTime = 1;
+        coyoteTime = 0;
+    }
+
+    if (!place_meeting(x, y + 2, objGround))
+    {
+        if (jumping && keyboard_check(vk_space) && jumpTime <= maxJumpTime)
+        {
+            moveY -= 1;
+            moveSpeed = 6.5;
+            jumpTime += 1;
+        }
+        else
+        {
+            jumping = false;
+        }
+    }
+
+    if (!place_meeting(x, y + 2, objGround) && coyoteTime <= 0)
+    {
+        if (moveY < 0)
+        {
+            moveY += 2;
+        }
+        else if (moveY < 10)
+        {
+            moveSpeed = 6;
+            moveY += 4;
+        }
+    }
+
+    if (moveY < 0 && place_meeting(x, y + moveY, objGround))
+    {
+        while (place_meeting(x, y, objGround))
+        {
+            y += 1;
+        }
+        moveY = 2;
+    }
 }
 
 // Movimento horizontal com colisão pixel a pixel

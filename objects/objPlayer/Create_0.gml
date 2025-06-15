@@ -3,6 +3,7 @@ runSpeed = 8;
 jumpSpeed = 16;
 
 jumping = false;
+caught = false;
 jumpTime = 0;
 maxJumpTime = 15;
 moveX = 0;
