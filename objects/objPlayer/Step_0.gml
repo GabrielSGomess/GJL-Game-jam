@@ -1,4 +1,5 @@
 moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
+
 /*
 if (keyboard_check(ord("X")))
 {
@@ -12,7 +13,7 @@ else
 moveX *= moveSpeed;
 
 // Lógica do pegador
-if (!caught && keyboard_check_pressed(vk_up) && place_meeting(x, y, objCatcher)) {
+if (!caught && keyboard_check_pressed(vk_space) && place_meeting(x, y, objCatcher)) {
     var catcher = instance_place(x, y, objCatcher);
     if (catcher != noone) {
         x = catcher.x; // Alinhar o x do jogador com o pegador
@@ -27,7 +28,7 @@ if (caught && !place_meeting(x, y, objCatcher)) {
 }
 
 // Configurar para sair do pegador e pular junto 
-if (caught && keyboard_check_pressed(vk_space)) {
+if (caught && keyboard_check_pressed(vk_up)) {
     caught = false;
     moveY = -jumpSpeed;
     jumping = true;
@@ -55,7 +56,7 @@ else {
         }
     }
 
-    if (keyboard_check_pressed(vk_space) && (coyoteTime > 0 || place_meeting(x, y + 2, objGround)))
+    if (keyboard_check_pressed(vk_up) && (coyoteTime > 0 || place_meeting(x, y + 2, objGround)))
     {
         moveY = -jumpSpeed;
         jumping = true;
@@ -65,7 +66,7 @@ else {
 
     if (!place_meeting(x, y + 2, objGround))
     {
-        if (jumping && keyboard_check(vk_space) && jumpTime <= maxJumpTime)
+        if (jumping && keyboard_check(vk_up) && jumpTime <= maxJumpTime)
         {
             moveY -= 1;
             moveSpeed = 6.5;
