@@ -17,3 +17,7 @@ maxCoyoteTime = 5;
 global.checkpoint_x = undefined;
 global.checkpoint_y = undefined;
 global.checkpoint_room = undefined;
+
+//pulo duplo
+pulo_duplo = false;
+usou_pulo_duplo = false;

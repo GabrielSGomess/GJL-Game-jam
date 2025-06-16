@@ -44,14 +44,23 @@ else {
         }
     }
 
-    if (keyboard_check_pressed(vk_up) && (coyoteTime > 0 || place_meeting(x, y + 2, objGround)))
-    {
+  if (keyboard_check_pressed(vk_up)) {
+    if (coyoteTime > 0 || place_meeting(x, y + 2, objGround)) {
+        // Pulo normal
         moveY = -jumpSpeed;
         jumping = true;
         jumpTime = 1;
         coyoteTime = 0;
+        usou_pulo_duplo = false; // resetar
     }
-
+    else if (pulo_duplo && !usou_pulo_duplo) {
+        // Pulo duplo
+        moveY = -jumpSpeed;
+        jumping = true;
+        jumpTime = 1;
+        usou_pulo_duplo = true;
+    }
+}
     if (!place_meeting(x, y + 2, objGround))
     {
         if (jumping && keyboard_check(vk_up) && jumpTime <= maxJumpTime)
