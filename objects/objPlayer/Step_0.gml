@@ -1,6 +1,7 @@
 moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
 moveX *= moveSpeed;
 
+
 // Lógica do pegador
 if (!caught && keyboard_check_pressed(vk_space) && place_meeting(x, y, objCatcher)) {
     var catcher = instance_place(x, y, objCatcher);

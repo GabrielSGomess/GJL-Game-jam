@@ -41,6 +41,7 @@
     {"id":{"name":"objCatcher","path":"objects/objCatcher/objCatcher.yy",},},
     {"id":{"name":"objCheckpoint","path":"objects/objCheckpoint/objCheckpoint.yy",},},
     {"id":{"name":"objDono","path":"objects/objDono/objDono.yy",},},
+    {"id":{"name":"objEspinhos","path":"objects/objEspinhos/objEspinhos.yy",},},
     {"id":{"name":"objFood","path":"objects/objFood/objFood.yy",},},
     {"id":{"name":"objGamemaneger","path":"objects/objGamemaneger/objGamemaneger.yy",},},
     {"id":{"name":"objGround","path":"objects/objGround/objGround.yy",},},
