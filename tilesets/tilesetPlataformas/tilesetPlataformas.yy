@@ -1,15 +1,14 @@
 {
   "$GMTileSet":"v1",
-  "%Name":"tilesetPredios",
+  "%Name":"tilesetPlataformas",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":18,
-    "SerialiseWidth":13,
-    "TileCompressedData":[-219,0,2,4,5,-11,0,2,6,7,],
-    "TileDataFormat":1,
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
   },
-  "name":"tilesetPredios",
-  "out_columns":7,
+  "name":"tilesetPlataformas",
+  "out_columns":4,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -19,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spirTileSet",
-    "path":"sprites/spirTileSet/spirTileSet.yy",
+    "name":"sprTileSetPlat",
+    "path":"sprites/sprTileSetPlat/sprTileSetPlat.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -35,5 +34,5 @@
   "tileWidth":96,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":55,
+  "tile_count":18,
 }
