@@ -21,3 +21,4 @@ global.checkpoint_room = undefined;
 //pulo duplo
 pulo_duplo = false;
 usou_pulo_duplo = false;
+pode_pular_duplo = false;

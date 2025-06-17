@@ -1,6 +1,7 @@
 moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
 moveX *= moveSpeed;
-
+var tecla_pulo = keyboard_check_pressed(vk_up);
+   
 
 // Lógica do pegador
 if (!caught && keyboard_check_pressed(vk_space) && place_meeting(x, y, objCatcher)) {
@@ -35,16 +36,23 @@ else {
         moveY = 0;
         jumping = false;
         coyoteTime = maxCoyoteTime;
+		usou_pulo_duplo = false;
+		pode_pular_duplo = false;
     }
     else
     {
+		if (pulo_duplo && !usou_pulo_duplo && moveY > 0 && !jumping && !pode_pular_duplo)
+		{
+		pode_pular_duplo = true;
+		}
+
         if (coyoteTime > 0)
         {
             coyoteTime -= 1;
         }
     }
-
-  if (keyboard_check_pressed(vk_up)) {
+ 
+  if (tecla_pulo){
     if (coyoteTime > 0 || place_meeting(x, y + 2, objGround)) {
         // Pulo normal
         moveY = -jumpSpeed;
@@ -52,13 +60,15 @@ else {
         jumpTime = 1;
         coyoteTime = 0;
         usou_pulo_duplo = false; // resetar
+		pode_pular_duplo = false
     }
-    else if (pulo_duplo && !usou_pulo_duplo) {
+   else if (pulo_duplo && !usou_pulo_duplo && (jumping || pode_pular_duplo)){
         // Pulo duplo
         moveY = -jumpSpeed;
         jumping = true;
         jumpTime = 1;
         usou_pulo_duplo = true;
+		pode_pular_duplo = false;
     }
 }
     if (!place_meeting(x, y + 2, objGround))
@@ -97,6 +107,7 @@ else {
         moveY = 2;
     }
 }
+
 
 // Movimento horizontal com colisão pixel a pixel
 var signX = sign(moveX);

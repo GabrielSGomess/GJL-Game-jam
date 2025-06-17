@@ -41,7 +41,7 @@
     {"id":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},},
     {"id":{"name":"objCatcher","path":"objects/objCatcher/objCatcher.yy",},},
     {"id":{"name":"objCheckpoint","path":"objects/objCheckpoint/objCheckpoint.yy",},},
-    {"id":{"name":"objCollar","path":"objects/objCollar/objCollar.yy",},},
+    {"id":{"name":"objColeira","path":"objects/objColeira/objColeira.yy",},},
     {"id":{"name":"objDeath","path":"objects/objDeath/objDeath.yy",},},
     {"id":{"name":"objFood","path":"objects/objFood/objFood.yy",},},
     {"id":{"name":"objGamemaneger","path":"objects/objGamemaneger/objGamemaneger.yy",},},
@@ -72,8 +72,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Level","path":"rooms/Level/Level.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Level","path":"rooms/Level/Level.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
