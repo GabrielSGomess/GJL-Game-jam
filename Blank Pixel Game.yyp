@@ -55,7 +55,7 @@
     {"id":{"name":"spirTileSet","path":"sprites/spirTileSet/spirTileSet.yy",},},
     {"id":{"name":"sprCatcher","path":"sprites/sprCatcher/sprCatcher.yy",},},
     {"id":{"name":"sprCheckpoint","path":"sprites/sprCheckpoint/sprCheckpoint.yy",},},
-    {"id":{"name":"SprColeira","path":"sprites/SprColeira/SprColeira.yy",},},
+    {"id":{"name":"sprColeira","path":"sprites/sprColeira/sprColeira.yy",},},
     {"id":{"name":"sprDono","path":"sprites/sprDono/sprDono.yy",},},
     {"id":{"name":"sprfood","path":"sprites/sprfood/sprfood.yy",},},
     {"id":{"name":"sprGround","path":"sprites/sprGround/sprGround.yy",},},
@@ -72,8 +72,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Level","path":"rooms/Level/Level.yy",},},
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

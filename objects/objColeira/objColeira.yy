@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SprColeira",
-    "path":"sprites/SprColeira/SprColeira.yy",
+    "name":"sprColeira",
+    "path":"sprites/sprColeira/sprColeira.yy",
   },
   "spriteMaskId":null,
   "visible":true,

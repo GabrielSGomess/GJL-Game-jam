@@ -1,6 +1,7 @@
 moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
 moveX *= moveSpeed;
 var tecla_pulo = keyboard_check_pressed(vk_up);
+var acabou_de_sair_do_catcher = false;
    
 
 // Lógica do pegador
@@ -10,6 +11,7 @@ if (!caught && keyboard_check_pressed(vk_space) && place_meeting(x, y, objCatche
         x = catcher.x;
         y = catcher.bbox_bottom;
         caught = true;
+		
     }
 }
 
@@ -23,6 +25,10 @@ if (caught && keyboard_check_pressed(vk_up)) {
     jumping = true;
     jumpTime = 1;
     coyoteTime = 0;
+	  if (!acabou_de_sair_do_catcher) {
+        usou_pulo_duplo = false;
+        pode_pular_duplo = false;
+    }
 }
 
 if (caught) {
@@ -37,7 +43,7 @@ else {
         jumping = false;
         coyoteTime = maxCoyoteTime;
 		usou_pulo_duplo = false;
-		pode_pular_duplo = false;
+		pode_pular_duplo = true;
     }
     else
     {
@@ -62,7 +68,7 @@ else {
         usou_pulo_duplo = false; // resetar
 		pode_pular_duplo = false
     }
-   else if (pulo_duplo && !usou_pulo_duplo && (jumping || pode_pular_duplo)){
+   else if (pulo_duplo && !usou_pulo_duplo && pode_pular_duplo) {
         // Pulo duplo
         moveY = -jumpSpeed;
         jumping = true;
