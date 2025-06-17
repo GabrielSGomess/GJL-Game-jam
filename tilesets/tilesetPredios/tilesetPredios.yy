@@ -3,9 +3,9 @@
   "%Name":"tilesetPredios",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":18,
-    "SerialiseWidth":13,
-    "TileCompressedData":[-219,0,2,4,5,-11,0,2,6,7,],
+    "SerialiseHeight":21,
+    "SerialiseWidth":16,
+    "TileCompressedData":[-267,0,2,1,2,-14,0,2,3,4,-30,0,3,5,6,7,-13,0,5,8,9,10,0,0,],
     "TileDataFormat":1,
   },
   "name":"tilesetPredios",
