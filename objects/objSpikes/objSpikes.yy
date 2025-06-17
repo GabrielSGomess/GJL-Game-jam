@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"objEspinhos",
+  "%Name":"objSpikes",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"objEspinhos",
+  "name":"objSpikes",
   "overriddenProperties":[],
   "parent":{
     "name":"Objetos",

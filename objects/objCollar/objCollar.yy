@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"objMorte",
+  "%Name":"objCollar",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"objMorte",
+  "name":"objCollar",
   "overriddenProperties":[],
   "parent":{
     "name":"Objetos",
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite13",
-    "path":"sprites/Sprite13/Sprite13.yy",
+    "name":"SprColeira",
+    "path":"sprites/SprColeira/SprColeira.yy",
   },
   "spriteMaskId":null,
   "visible":true,
