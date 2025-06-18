@@ -1,6 +1,7 @@
 moveX = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 moveX *= moveSpeed;
-var tecla_pulo = keyboard_check_pressed(ord("W"));
+var tecla_pulo_press= keyboard_check_pressed(ord("W"));
+var tecla_pulo_segura = keyboard_check(ord("W"));
 var acabou_de_sair_do_catcher = false;
    
 
@@ -58,28 +59,25 @@ else {
         }
     }
  
-  if (tecla_pulo){
-    if (coyoteTime > 0 || place_meeting(x, y + 2, objGround)) {
-        // Pulo normal
-        moveY = -jumpSpeed;
-        jumping = true;
-        jumpTime = 1;
-        coyoteTime = 0;
-        usou_pulo_duplo = false; // resetar
-		pode_pular_duplo = false
-    }
-   else if (pulo_duplo && !usou_pulo_duplo && pode_pular_duplo) {
-        // Pulo duplo
-        moveY = -jumpSpeed;
-        jumping = true;
-        jumpTime = 1;
-        usou_pulo_duplo = true;
-		pode_pular_duplo = false;
-    }
+	if (tecla_pulo_segura && !jumping && (coyoteTime > 0 || place_meeting(x, y + 2, objGround))) {
+    moveY = -jumpSpeed;
+    jumping = true;
+    jumpTime = 1;
+    coyoteTime = 0;
+    usou_pulo_duplo = false;
+    pode_pular_duplo = false;
+	}
+	// Pulo duplo só com tecla pressionada nova
+	else if (tecla_pulo_press && pulo_duplo && !usou_pulo_duplo && pode_pular_duplo) {
+    moveY = -jumpSpeed;
+    jumping = true;
+    jumpTime = 1;
+    usou_pulo_duplo = true;
+    pode_pular_duplo = false;
 }
     if (!place_meeting(x, y + 2, objGround))
     {
-        if (jumping && keyboard_check(ord("W")) && jumpTime <= maxJumpTime)
+        if (jumping && tecla_pulo_segura && jumpTime <= maxJumpTime)
         {
             moveY -= 1;
             moveSpeed = 6.5;
