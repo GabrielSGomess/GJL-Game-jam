@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprCatcher",
-    "path":"sprites/sprCatcher/sprCatcher.yy",
+    "name":"sprRealCatcher",
+    "path":"sprites/sprRealCatcher/sprRealCatcher.yy",
   },
   "spriteMaskId":null,
   "visible":true,
