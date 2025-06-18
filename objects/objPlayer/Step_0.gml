@@ -1,6 +1,6 @@
-moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
+moveX = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 moveX *= moveSpeed;
-var tecla_pulo = keyboard_check_pressed(vk_up);
+var tecla_pulo = keyboard_check_pressed(ord("W"));
 var acabou_de_sair_do_catcher = false;
    
 
@@ -19,7 +19,7 @@ if (caught && !place_meeting(x, y, objCatcher)) {
     caught = false;
 }
 
-if (caught && keyboard_check_pressed(vk_up)) {
+if (caught && keyboard_check_pressed(ord("W"))) {
     caught = false;
     moveY = -jumpSpeed;
     jumping = true;
@@ -79,7 +79,7 @@ else {
 }
     if (!place_meeting(x, y + 2, objGround))
     {
-        if (jumping && keyboard_check(vk_up) && jumpTime <= maxJumpTime)
+        if (jumping && keyboard_check(ord("W")) && jumpTime <= maxJumpTime)
         {
             moveY -= 1;
             moveSpeed = 6.5;
