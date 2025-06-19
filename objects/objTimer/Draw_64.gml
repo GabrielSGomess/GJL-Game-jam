@@ -14,5 +14,5 @@ var secs_txt = string(secs);
 if (secs < 10) secs_txt = "0" + secs_txt;
 var display = mins_txt + ":" + secs_txt;
 
-draw_text(1200, 32, display);
+draw_text(1290, 19, display);
 #endregion
