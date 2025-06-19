@@ -67,6 +67,7 @@
     {"id":{"name":"sprColeira","path":"sprites/sprColeira/sprColeira.yy",},},
     {"id":{"name":"sprDogNpc","path":"sprites/sprDogNpc/sprDogNpc.yy",},},
     {"id":{"name":"sprDono","path":"sprites/sprDono/sprDono.yy",},},
+    {"id":{"name":"sprEndStage","path":"sprites/sprEndStage/sprEndStage.yy",},},
     {"id":{"name":"sprfood","path":"sprites/sprfood/sprfood.yy",},},
     {"id":{"name":"sprGround","path":"sprites/sprGround/sprGround.yy",},},
     {"id":{"name":"Sprite13","path":"sprites/Sprite13/Sprite13.yy",},},
