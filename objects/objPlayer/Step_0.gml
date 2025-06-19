@@ -9,8 +9,8 @@ var acabou_de_sair_do_catcher = false;
 if (!caught && keyboard_check_pressed(vk_space) && place_meeting(x, y, objCatcher)) {
     var catcher = instance_place(x, y, objCatcher);
     if (catcher != noone) {
-        x = catcher.x +1;
-        y = catcher.bbox_bottom;
+        x = catcher.x - 5;
+        y = catcher.bbox_bottom - 5;
         caught = true;
 		
     }
