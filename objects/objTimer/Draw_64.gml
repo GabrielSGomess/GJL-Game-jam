@@ -1,5 +1,6 @@
 #region cronometro
 draw_set_font(fontTimer)
+draw_set_color(c_white);
 
 timer = max (0, timer);
 

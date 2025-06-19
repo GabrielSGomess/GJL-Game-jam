@@ -3,6 +3,16 @@ moveX *= moveSpeed;
 var tecla_pulo_press= keyboard_check_pressed(ord("W"));
 var tecla_pulo_segura = keyboard_check(ord("W"));
 var acabou_de_sair_do_catcher = false;
+
+if (!global.podeMover) {
+    moveX = 0;
+    moveY = 0;
+	
+	sprite_index = sprPlayerIdle;
+	image_speed = 1;
+    exit;
+}
+
    
 
 // Lógica do pegador
@@ -116,23 +126,41 @@ else {
 // Movimento horizontal com colisão pixel a pixel
 var signX = sign(moveX);
 repeat(abs(moveX)) {
-	if (!place_meeting(x + signX, y, objGround)) {
-		x += signX;
-	} else {
-		break;
-	}
+    podeMover = !place_meeting(x + signX, y, objGround);
+
+    // Se tiver colisão com a barreira, só bloqueia se estiver ativa
+    if (place_meeting(x + signX, y, objBarreiraVoltar)) {
+        var barreira = instance_place(x + signX, y, objBarreiraVoltar);
+        if (barreira != noone && barreira.ativo) {
+            podeMover = false;
+        }
+    }
+
+    if (podeMover) {
+        x += signX;
+    } else {
+        break;
+    }
 }
 
 // Movimento vertical com colisão pixel a pixel
 var signY = sign(moveY);
 repeat(abs(moveY)) {
-	if (!place_meeting(x, y + signY, objGround)) {
-		y += signY;
-	} else {
-		break;
-	}
-}
+    podeMover = !place_meeting(x, y + signY, objGround);
 
+    if (place_meeting(x, y + signY, objBarreiraVoltar)) {
+        var barreira = instance_place(x, y + signY, objBarreiraVoltar);
+        if (barreira != noone && barreira.ativo) {
+            podeMover = false;
+        }
+    }
+
+    if (podeMover) {
+        y += signY;
+    } else {
+        break;
+    }
+}
 if (moveX != 0)
 {
 	image_xscale = sign(moveX);
@@ -184,3 +212,5 @@ if (keyboard_check_pressed(tecla_voltar))
         y = global.checkpoint_y;
 	}
 }
+
+
