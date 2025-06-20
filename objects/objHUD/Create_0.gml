@@ -1,0 +1,1 @@
+global.gameover_ativo = false;
