@@ -87,6 +87,7 @@
     {"id":{"name":"Sprite13","path":"sprites/Sprite13/Sprite13.yy",},},
     {"id":{"name":"Sprite19","path":"sprites/Sprite19/Sprite19.yy",},},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
+    {"id":{"name":"sprJanelaChegada","path":"sprites/sprJanelaChegada/sprJanelaChegada.yy",},},
     {"id":{"name":"sprPlayerCatching","path":"sprites/sprPlayerCatching/sprPlayerCatching.yy",},},
     {"id":{"name":"sprPlayerGoingDown","path":"sprites/sprPlayerGoingDown/sprPlayerGoingDown.yy",},},
     {"id":{"name":"sprPlayerGoingUp","path":"sprites/sprPlayerGoingUp/sprPlayerGoingUp.yy",},},
