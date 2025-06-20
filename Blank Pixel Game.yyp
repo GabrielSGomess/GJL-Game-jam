@@ -63,6 +63,7 @@
     {"id":{"name":"objTextpoup","path":"objects/objTextpoup/objTextpoup.yy",},},
     {"id":{"name":"objTimer","path":"objects/objTimer/objTimer.yy",},},
     {"id":{"name":"objTimerEndStage","path":"objects/objTimerEndStage/objTimerEndStage.yy",},},
+    {"id":{"name":"Reset","path":"objects/Reset/Reset.yy",},},
     {"id":{"name":"Level","path":"rooms/Level/Level.yy",},},
     {"id":{"name":"rmMenu","path":"rooms/rmMenu/rmMenu.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
