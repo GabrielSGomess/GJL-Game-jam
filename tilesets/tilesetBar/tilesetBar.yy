@@ -1,15 +1,18 @@
 {
   "$GMTileSet":"v1",
-  "%Name":"tilesetPredios",
+  "%Name":"tilesetBar",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":21,
+    "SerialiseHeight":6,
     "SerialiseWidth":16,
-    "TileCompressedData":[-267,0,2,1,2,-14,0,2,3,4,-30,0,3,5,6,7,-13,0,5,8,9,10,0,0,],
+    "TileCompressedData":[
+      -16,0,5,1,2,3,4,5,-11,0,12,17,18,19,20,21,0,39,40,41,0,42,43,-4,0,21,33,34,35,36,37,0,55,56,57,0,58,
+      59,0,46,47,0,49,50,51,52,53,-7,0,1,45,-9,0,10,11,12,0,27,28,0,61,0,62,63,
+    ],
     "TileDataFormat":1,
   },
-  "name":"tilesetPredios",
-  "out_columns":7,
+  "name":"tilesetBar",
+  "out_columns":8,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -19,8 +22,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"sprTileSet",
-    "path":"sprites/sprTileSet/sprTileSet.yy",
+    "name":"sprTileSetBar",
+    "path":"sprites/sprTileSetBar/sprTileSetBar.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -35,5 +38,5 @@
   "tileWidth":32,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":55,
+  "tile_count":64,
 }
