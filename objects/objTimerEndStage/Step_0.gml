@@ -6,5 +6,5 @@ if (!contando && instance_exists(objTimer) && objTimer.contagem_ativa) {
 if (contando) {
     tempo += delta_time / 1000000;
 }
-show_debug_message("melhor_tempo = " + string(melhor_tempo));
+
 

@@ -6,4 +6,3 @@ if(place_meeting(x,y,objPlayer))
     global.checkpoint_room = room;
     
 }
-show_debug_message("Checkpoint salvo em: " + string(x) + "," + string(y));

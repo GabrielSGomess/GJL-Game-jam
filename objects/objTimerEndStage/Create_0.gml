@@ -8,3 +8,4 @@ fase_nome = room_get_name(room); // guarde isso se quiser reutilizar
 ini_open("dados.ini");
 melhor_tempo = ini_read_real("tempos", fase_nome, -1); // aqui corrigido
 ini_close();
+

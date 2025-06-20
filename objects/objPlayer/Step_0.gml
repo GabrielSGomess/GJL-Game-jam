@@ -3,6 +3,9 @@ moveX *= moveSpeed;
 var tecla_pulo_press= keyboard_check_pressed(ord("W"));
 var tecla_pulo_segura = keyboard_check(ord("W"));
 var acabou_de_sair_do_catcher = false;
+if (global.gameover_ativo) {
+    exit; // Sai do Step e não executa movimento
+}
 
 if (!global.podeMover) {
     moveX = 0;
