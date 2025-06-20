@@ -14,6 +14,9 @@ if (mostrar_texto) {
                 timer.ativo = true;
                 timer.visible = true;
             }
+			if (instance_exists(objTimer)) {
+			    objTimer.contagem_ativa = true;
+			}
 
             var dono = instance_find(objOwner, 0);
             if (dono != noone) {
