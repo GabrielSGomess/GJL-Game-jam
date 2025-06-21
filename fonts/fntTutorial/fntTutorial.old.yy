@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fontGameOver",
+  "%Name":"fntTutorial",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":14,
@@ -189,7 +189,7 @@
   "last":0,
   "lineHeight":18,
   "maintainGms1Font":false,
-  "name":"fontGameOver",
+  "name":"fntTutorial",
   "parent":{
     "name":"Fontes",
     "path":"folders/Fontes.yy",
