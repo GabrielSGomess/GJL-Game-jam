@@ -80,20 +80,26 @@ if (global.gameover_ativo) {
 }
 	// Desenhar o dono se estiver ativo
 var dono = instance_find(objOwner, 0);
+
 if (dono != noone && dono.ativo && !global.jogo_pausado && instance_exists(objTimer)) {
     var tempo_max = objTimer.tempo_max;
     var tempo_atual = objTimer.timer;
 
+    // Se o tempo está DECRESCENDO, usamos essa fórmula:
     var frac_tempo = clamp((tempo_max - tempo_atual) / tempo_max, 0, 1);
 
-    var tela_inicio_x = 50;
-    var tela_fim_x = display_get_gui_width() - 110;
+    // Posição inicial (esquerda) e final (direita)
+    var tela_inicio_x = 0;
+    var tela_fim_x = display_get_gui_width() - 260;
 
+    // Calcula a posição com interpolação
     var dono_x = lerp(tela_inicio_x, tela_fim_x, frac_tempo);
     var dono_y = 15;
 
     draw_sprite(dono.sprite_index, dono.image_index, dono_x, dono_y);
 }
+
+
 
 
 
