@@ -658,10 +658,10 @@
     {"name":"inst_44E0FCE6","path":"rooms/Level/Level.yy",},
     {"name":"inst_1D2A794D","path":"rooms/Level/Level.yy",},
     {"name":"inst_5A388F26","path":"rooms/Level/Level.yy",},
-    {"name":"inst_1023102F","path":"rooms/Level/Level.yy",},
     {"name":"inst_21F9C1DC","path":"rooms/Level/Level.yy",},
     {"name":"inst_BD1A413","path":"rooms/Level/Level.yy",},
     {"name":"inst_78D6DFC5","path":"rooms/Level/Level.yy",},
+    {"name":"inst_1023102F","path":"rooms/Level/Level.yy",},
   ],
   "isDnd":false,
   "layers":[

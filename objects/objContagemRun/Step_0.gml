@@ -30,7 +30,7 @@ if (mostrar_texto) {
             var barreira = instance_find(objBarreiraVoltar, 0);
             if (barreira != noone) {
                 barreira.ativo = true;
-                barreira.visible = true;
+                barreira.visible = false;
             }
 
             // Finaliza contagem
