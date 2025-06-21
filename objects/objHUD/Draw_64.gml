@@ -117,36 +117,42 @@ if (instance_exists(objTimer) && objTimer.contagem_ativa && !global.gameover_ati
     }
 }
 
-// ================ TELA DE RECORDES ================
-if (digitando_nome) {
-    draw_sprite(sprFundoGameOver, 0, cx - sprite_get_width(sprFundoGameOver)/2, cy - sprite_get_height(sprFundoGameOver)/2);
-    draw_set_font(fontGameOver);
-    draw_set_color(c_white);
-    draw_set_halign(fa_center);
-    draw_text(cx, cy - 80, "NEW RECORD!");
-    draw_text(cx, cy - 40, "Enter your initials:");
-    draw_text(cx, cy, nome_recorde + string_repeat("_", max_letras - string_length(nome_recorde)));
+	// ================ TELA DE RECORDES ================
+	if (digitando_nome) {
+	    draw_sprite(sprFundoGameOver, 0, cx - sprite_get_width(sprFundoGameOver)/2, cy - sprite_get_height(sprFundoGameOver)/2);
+	    draw_set_font(fontGameOver);
+	    draw_set_color(c_white);
+	    draw_set_halign(fa_center);
+	    draw_text(cx, cy - 80, "NEW RECORD!");
+	    draw_text(cx, cy - 40, "Enter your initials:");
+	    draw_text(cx, cy, nome_recorde + string_repeat("_", max_letras - string_length(nome_recorde)));
+	}
+
+	if (mostrar_leaderboard && !digitando_nome) {
+	    draw_sprite(sprFundoGameOver, 0, cx - sprite_get_width(sprFundoGameOver)/2, cy - sprite_get_height(sprFundoGameOver)/2);
+	    draw_set_font(fontGameOver);
+	    draw_set_color(c_white);
+	    draw_set_halign(fa_center);
+	    draw_text(cx, cy - 110, "TOP 3 RECORDS");
+
+	    for (var i = 0; i < 3; i++) {
+		var tempo = recordes_tempos[i];
+		if (tempo < 9999.999) {
+        var mins = floor(tempo / 60);
+        var secs = floor(tempo) mod 60;
+        var ms = floor((tempo - floor(tempo)) * 1000);
+
+        var mins_txt = string_replace_all(string_format(mins, 2, 0), " ", "0");
+        var secs_txt = string_replace_all(string_format(secs, 2, 0), " ", "0");
+        var ms_txt   = string_replace_all(string_format(ms, 3, 0), " ", "0");
+
+        var tempo_txt = mins_txt + ":" + secs_txt + ":" + ms_txt;
+        draw_text(cx, cy - 90 + i * 30, recordes_nomes[i] + " - " + tempo_txt);
+    } else {
+        draw_text(cx, cy - 90 + i * 30, "--- - 00:00:000");
+    }
 }
 
-if (mostrar_leaderboard && !digitando_nome) {
-    draw_sprite(sprFundoGameOver, 0, cx - sprite_get_width(sprFundoGameOver)/2, cy - sprite_get_height(sprFundoGameOver)/2);
-    draw_set_font(fontGameOver);
-    draw_set_color(c_white);
-    draw_set_halign(fa_center);
-    draw_text(cx, cy - 110, "TOP 3 RECORDS");
-
-    for (var i = 0; i < 3; i++) {
-        var tempo = recordes_tempos[i];
-        if (tempo < 9999.999) {
-            var mins = floor(tempo / 60);
-            var secs = floor(tempo) mod 60;
-            var ms = floor((tempo - floor(tempo)) * 1000);
-            var tempo_txt = string_format(mins, 2, 0) + ":" + string_format(secs, 2, 0) + ":" + string_format(ms, 3, 0);
-            draw_text(cx, cy - 90 + i * 30, recordes_nomes[i] + " - " + tempo_txt);
-        } else {
-            draw_text(cx, cy - 90 + i * 30, "--- - 00:00:000");
-        }
-    }
 
     // Botão TRY AGAIN
     var try_x = cx - sprite_get_width(sprBotaoTryAgain) / 2;
