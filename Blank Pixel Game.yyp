@@ -49,6 +49,7 @@
     {"id":{"name":"objCheckpoint","path":"objects/objCheckpoint/objCheckpoint.yy",},},
     {"id":{"name":"objColeira","path":"objects/objColeira/objColeira.yy",},},
     {"id":{"name":"objContagemRun","path":"objects/objContagemRun/objContagemRun.yy",},},
+    {"id":{"name":"objControladorTesteVazio","path":"objects/objControladorTesteVazio/objControladorTesteVazio.yy",},},
     {"id":{"name":"objDeath","path":"objects/objDeath/objDeath.yy",},},
     {"id":{"name":"objFood","path":"objects/objFood/objFood.yy",},},
     {"id":{"name":"objGamemaneger","path":"objects/objGamemaneger/objGamemaneger.yy",},},
