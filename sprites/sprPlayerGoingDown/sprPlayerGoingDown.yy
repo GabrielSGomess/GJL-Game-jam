@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Dog Sprites",
+    "path":"folders/Sprites/Dog Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

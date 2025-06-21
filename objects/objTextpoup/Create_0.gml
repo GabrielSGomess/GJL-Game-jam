@@ -1,5 +1,5 @@
-texto = "10s";
+texto = "+10 SECONDS";
 alpha = 1;
 y_speed = -1;
-life = 180;
+life = 220;
 cor = c_green;

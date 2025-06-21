@@ -1,1 +1,1 @@
-checkpoint_ativo = false;
+activated = false; 

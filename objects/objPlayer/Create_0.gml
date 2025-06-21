@@ -24,3 +24,7 @@ pode_pular_duplo = false;
 
 // Controle de movimento (trava/destrava)
 global.podeMover = true;
+
+//Coleira check
+
+tem_coleira = false;
