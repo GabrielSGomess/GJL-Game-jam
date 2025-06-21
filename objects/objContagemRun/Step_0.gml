@@ -1,4 +1,4 @@
-if (mostrar_texto) {
+	if (mostrar_texto) {
     tempo += 1;
 
     if (tempo > frame_delay) {
@@ -6,35 +6,35 @@ if (mostrar_texto) {
         index += 1;
 
         if (index >= array_length(frases)) {
+            // Libera movimento se o jogo estiver normal
             if (!global.jogo_pausado && !global.gameover_ativo) {
-			 global.podeMover = true;	
-			
+                global.podeMover = true;	
+            }
 
-			}
-
-
-            // Ativa o timer e o dono
+            // Ativa o timer
             var timer = instance_find(objTimer, 0);
             if (timer != noone) {
                 timer.ativo = true;
                 timer.visible = true;
+                timer.contagem_ativa = true;
             }
-			if (instance_exists(objTimer)) {
-			    objTimer.contagem_ativa = true;
-			}
-			var dono = instance_find(objOwner, 0);
-			if (dono != noone) {
-			dono.visible = true // <- oculta quando pausa
-			dono.ativo = true;
-			}
-           
+
+            // Ativa o dono
+            var dono = instance_find(objOwner, 0);
+            if (dono != noone) {
+                dono.visible = true;
+                dono.ativo = true;
+            }
+
+            // Ativa a barreira
             var barreira = instance_find(objBarreiraVoltar, 0);
             if (barreira != noone) {
                 barreira.ativo = true;
                 barreira.visible = true;
             }
 
-            instance_destroy(); // remove contagem
+            // Finaliza contagem
+            instance_destroy();
         }
     }
 }
