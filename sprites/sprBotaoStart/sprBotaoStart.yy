@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"buttons gameover_menu_endgame",
+    "path":"folders/Sprites/buttons gameover_menu_endgame.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
