@@ -1,6 +1,6 @@
 // Pegando input logo no começo
-var tecla_pulo_press = keyboard_check_pressed(ord("W"));
-var tecla_pulo_segura = keyboard_check(ord("W"));
+var tecla_pulo_press = keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up);
+var tecla_pulo_segura = keyboard_check(ord("W")) || keyboard_check(vk_up);
 
 if (global.podeMover && (moveX != 0 || moveY != 0)) {
     image_speed = 1;
@@ -17,7 +17,15 @@ if (global.jogo_pausado || global.gameover_ativo || !global.podeMover) {
     exit;
 }
 
-moveX = keyboard_check(ord("D")) - keyboard_check(ord("A"));
+var inputX_wasd = keyboard_check(ord("D")) - keyboard_check(ord("A"));
+var inputX_arrows = keyboard_check(vk_right) - keyboard_check(vk_left);
+
+if (inputX_wasd != 0) {
+    moveX = inputX_wasd;
+} else {
+    moveX = inputX_arrows;
+}
+
 moveX *= moveSpeed;
 var acabou_de_sair_do_catcher = false;
 
@@ -27,6 +35,9 @@ if (!caught && keyboard_check_pressed(vk_space) && place_meeting(x, y, objCatche
         x = catcher.x - 5;
         y = catcher.bbox_bottom - 5;
         caught = true;
+
+        // Toca o som de agarrar
+        audio_play_sound(sndCatch, 1, false);
     }
 }
 
@@ -74,12 +85,14 @@ if (caught) {
         coyoteTime = 0;
         usou_pulo_duplo = false;
         pode_pular_duplo = false;
+		audio_play_sound(sndJump, 1, false);
     } else if (tecla_pulo_press && pulo_duplo && !usou_pulo_duplo && pode_pular_duplo) {
         moveY = -jumpSpeed;
         jumping = true;
         jumpTime = 1;
         usou_pulo_duplo = true;
         pode_pular_duplo = false;
+		audio_play_sound(sndDoubleJump, 1, false);
     }
 
     if (!place_meeting(x, y + 2, objGround)) {
@@ -198,4 +211,12 @@ if (place_meeting(x, y, objFood)) {
 
         instance_destroy(food);
     }
+}
+
+if (place_meeting(x, y, objSpikes) || place_meeting(x, y, objDeath)) {
+    audio_play_sound(sndDeath, 1, false);
+}
+
+if(place_meeting(x,y, objTimerEndStage)){
+	audio_play_sound(sndCollar, 1, false);	
 }

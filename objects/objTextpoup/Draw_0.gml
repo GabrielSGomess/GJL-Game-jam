@@ -1,6 +1,6 @@
 // Desenha o texto com transparência e cor
 draw_set_alpha(alpha);
-draw_set_color(cor);
+draw_set_color(make_color_rgb(57, 255, 20));
 draw_set_font(fntClockPlusTen);
 draw_text(x,y,texto);
 // Reseta configurações de desenho  
