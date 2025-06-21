@@ -8,7 +8,7 @@ recordes_tempos = array_create(3, 9999.999);
 // Controle da tela de digitação de nome
 digitando_nome = false;
 nome_recorde = "";
-tempo_recorde = 0;
+tempo_recorde = 0; // ✅ Inicializa corretamente
 pos_recorde = -1;
 
 // Número máximo de letras
