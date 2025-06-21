@@ -1,4 +1,4 @@
-tempo_max = 80
+tempo_max = 1
 timer = tempo_max;
 ativo = false;
 visible = false;

@@ -5,8 +5,8 @@ var gui_w = display_get_gui_width();
 var gui_h = display_get_gui_height();
 var cx = gui_w / 2;
 var cy = gui_h / 2;
-var mx = display_mouse_get_x();
-var my = display_mouse_get_y();
+var mx = device_mouse_x_to_gui(0);
+var my = device_mouse_y_to_gui(0);
 
 // ================= MENU =================
 if (room == rmMenu) {
