@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite13",
-    "path":"sprites/Sprite13/Sprite13.yy",
+    "name":"sprTutorialExit",
+    "path":"sprites/sprTutorialExit/sprTutorialExit.yy",
   },
   "spriteMaskId":null,
   "visible":true,

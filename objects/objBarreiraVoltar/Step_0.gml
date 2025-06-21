@@ -5,3 +5,4 @@ if (ativo) {
     mask_index = -1;
     visible = false;
 }
+

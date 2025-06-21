@@ -6,7 +6,12 @@ if (mostrar_texto) {
         index += 1;
 
         if (index >= array_length(frases)) {
-            global.podeMover = true;
+            if (!global.jogo_pausado && !global.gameover_ativo) {
+			 global.podeMover = true;	
+			
+
+			}
+
 
             // Ativa o timer e o dono
             var timer = instance_find(objTimer, 0);
@@ -17,13 +22,12 @@ if (mostrar_texto) {
 			if (instance_exists(objTimer)) {
 			    objTimer.contagem_ativa = true;
 			}
-
-            var dono = instance_find(objOwner, 0);
-            if (dono != noone) {
-                dono.ativo = true;
-                dono.visible = true;
-            }
-
+			var dono = instance_find(objOwner, 0);
+			if (dono != noone) {
+			dono.visible = true // <- oculta quando pausa
+			dono.ativo = true;
+			}
+           
             var barreira = instance_find(objBarreiraVoltar, 0);
             if (barreira != noone) {
                 barreira.ativo = true;

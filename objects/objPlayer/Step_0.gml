@@ -1,22 +1,32 @@
+// Pausa tudo se o jogo estiver pausado, game over ou sem permissão
+if (global.podeMover && (moveX != 0 || moveY != 0)) {
+    image_speed = 1;
+	}
+
+if (global.jogo_pausado || global.gameover_ativo || !global.podeMover) {
+    moveX = 0;
+    moveY = 0;
+    moveSpeed = 0;
+
+    sprite_index = sprPlayerIdle;
+    image_speed = 0;
+	
+    // Travar sprite na direção atual (opcional)
+    // image_index = 0;
+
+    exit; // <- Impede qualquer outra lógica de acontecer
+}
+
+
+
+
+// Agora sim pode ler teclas
 moveX = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 moveX *= moveSpeed;
 var tecla_pulo_press= keyboard_check_pressed(ord("W"));
 var tecla_pulo_segura = keyboard_check(ord("W"));
 var acabou_de_sair_do_catcher = false;
-if (global.gameover_ativo) {
-    exit; // Sai do Step e não executa movimento
-}
 
-if (!global.podeMover) {
-    moveX = 0;
-    moveY = 0;
-	
-	sprite_index = sprPlayerIdle;
-	image_speed = 1;
-    exit;
-}
-
-   
 
 // Lógica do pegador
 if (!caught && keyboard_check_pressed(vk_space) && place_meeting(x, y, objCatcher)) {
@@ -126,44 +136,47 @@ else {
 }
 
 
-// Movimento horizontal com colisão pixel a pixel
+
+// controle local para saber se pode andar
+var podeAndarX = true;
 var signX = sign(moveX);
 repeat(abs(moveX)) {
-    podeMover = !place_meeting(x + signX, y, objGround);
+    podeAndarX = !place_meeting(x + signX, y, objGround);
 
-    // Se tiver colisão com a barreira, só bloqueia se estiver ativa
     if (place_meeting(x + signX, y, objBarreiraVoltar)) {
         var barreira = instance_place(x + signX, y, objBarreiraVoltar);
         if (barreira != noone && barreira.ativo) {
-            podeMover = false;
+            podeAndarX = false;
         }
     }
 
-    if (podeMover) {
+    if (podeAndarX) {
         x += signX;
     } else {
         break;
     }
 }
 
-// Movimento vertical com colisão pixel a pixel
+// mesmo pra vertical
+var podeAndarY = true;
 var signY = sign(moveY);
 repeat(abs(moveY)) {
-    podeMover = !place_meeting(x, y + signY, objGround);
+    podeAndarY = !place_meeting(x, y + signY, objGround);
 
     if (place_meeting(x, y + signY, objBarreiraVoltar)) {
         var barreira = instance_place(x, y + signY, objBarreiraVoltar);
         if (barreira != noone && barreira.ativo) {
-            podeMover = false;
+            podeAndarY = false;
         }
     }
 
-    if (podeMover) {
+    if (podeAndarY) {
         y += signY;
     } else {
         break;
     }
 }
+
 if (moveX != 0)
 {
 	image_xscale = sign(moveX);
@@ -215,5 +228,3 @@ if (keyboard_check_pressed(tecla_voltar))
         y = global.checkpoint_y;
 	}
 }
-
-

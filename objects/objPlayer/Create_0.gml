@@ -1,7 +1,6 @@
 moveSpeed = 8;
 runSpeed = 8;
 jumpSpeed = 16;
-
 jumping = false;
 caught = false;
 jumpTime = 0;

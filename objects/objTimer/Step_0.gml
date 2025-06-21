@@ -1,3 +1,6 @@
+if (global.jogo_pausado) {
+    exit;
+}
 if (contagem_ativa) {
     timer -= delta_time / 1000000;
 
