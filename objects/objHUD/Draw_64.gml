@@ -53,6 +53,7 @@ if (global.gameover_ativo) {
     if (mouse_check_button_pressed(mb_left)
         && mx > try_x && mx < try_x + sprite_get_width(sprBotaoTryAgain)
         && my > try_y && my < try_y + sprite_get_height(sprBotaoTryAgain)) {
+		audio_stop_all();
         room_restart();
     }
 
