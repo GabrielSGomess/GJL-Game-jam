@@ -205,6 +205,8 @@ if (place_meeting(x, y, objFood)) {
     var food = instance_place(x, y, objFood);
     if (food != noone) {
         objTimer.timer += food.tempo_extra;
+		audio_play_sound(sndClock, 1, false);
+		audio_sound_pitch(sndClock, 2);
 
         var txt = instance_create_layer(food.x, food.y, "Instances", objTextpoup);
         txt.text = "+" + string(food.tempo_extra) + "s";
@@ -218,5 +220,5 @@ if (place_meeting(x, y, objSpikes) || place_meeting(x, y, objDeath)) {
 }
 
 if(place_meeting(x,y, objTimerEndStage)){
-	audio_play_sound(sndCollar, 1, false);	
+	audio_play_sound(sndVictory, 1, false);	
 }

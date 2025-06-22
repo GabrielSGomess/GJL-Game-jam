@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"sndJump",
+  "%Name":"sndClock",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.72322,
-  "name":"sndJump",
+  "duration":3.5071428,
+  "name":"sndClock",
   "parent":{
     "name":"Sons",
     "path":"folders/Sons.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndJump.wav",
+  "soundFile":"sndClock.wav",
   "type":1,
-  "volume":0.4,
+  "volume":0.8,
 }

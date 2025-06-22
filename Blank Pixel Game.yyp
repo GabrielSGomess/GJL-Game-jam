@@ -75,6 +75,7 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"sndBGM","path":"sounds/sndBGM/sndBGM.yy",},},
     {"id":{"name":"sndCatch","path":"sounds/sndCatch/sndCatch.yy",},},
+    {"id":{"name":"sndClock","path":"sounds/sndClock/sndClock.yy",},},
     {"id":{"name":"sndCollar","path":"sounds/sndCollar/sndCollar.yy",},},
     {"id":{"name":"sndDeath","path":"sounds/sndDeath/sndDeath.yy",},},
     {"id":{"name":"sndDoubleJump","path":"sounds/sndDoubleJump/sndDoubleJump.yy",},},
