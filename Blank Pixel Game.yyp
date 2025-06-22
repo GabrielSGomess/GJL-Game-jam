@@ -69,6 +69,7 @@
     {"id":{"name":"objTimer","path":"objects/objTimer/objTimer.yy",},},
     {"id":{"name":"objTimerEndStage","path":"objects/objTimerEndStage/objTimerEndStage.yy",},},
     {"id":{"name":"objTryAgain","path":"objects/objTryAgain/objTryAgain.yy",},},
+    {"id":{"name":"objWindowCaption","path":"objects/objWindowCaption/objWindowCaption.yy",},},
     {"id":{"name":"Level","path":"rooms/Level/Level.yy",},},
     {"id":{"name":"rmCredits","path":"rooms/rmCredits/rmCredits.yy",},},
     {"id":{"name":"rmMenu","path":"rooms/rmMenu/rmMenu.yy",},},

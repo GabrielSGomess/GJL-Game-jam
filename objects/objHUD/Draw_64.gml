@@ -166,6 +166,7 @@ if (instance_exists(objTimer) && objTimer.contagem_ativa && !global.gameover_ati
         mostrar_leaderboard = false;
         global.jogo_pausado = false;
         digitando_nome = false;
+		audio_stop_all();
         room_restart();
     }
 
